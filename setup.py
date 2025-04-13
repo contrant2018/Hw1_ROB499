@@ -13,13 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='Ubuntu',
-    maintainer_email='Ubuntu@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='AnthonyContreras',
+    maintainer_email='contrant@oregonstate.edu',
+    description='HW1 package',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        'oscope = hw1.oscope:main',
         ],
     },
 )
