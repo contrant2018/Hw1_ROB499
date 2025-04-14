@@ -15,13 +15,13 @@ setup(
     zip_safe=True,
     maintainer='AnthonyContreras',
     maintainer_email='contrant@oregonstate.edu',
-    description='hw1 package',
+    description='hw2 package',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'oscope = hw1.oscope:main',
-        'limiter = hw1.limiter:main',
+        'oscope = hw2.oscope:main',
+        'limiter = hw2.limiter:main',
         ],
     },
 )
