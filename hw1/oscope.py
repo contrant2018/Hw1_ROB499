@@ -15,10 +15,12 @@ class oscope(Node):
 		# super() class.
 		super().__init__('oscope')
 
+		#publishing our data
 		self.oscope_pub = self.create_publisher(Float32, 'Sinewave', 10)
 		self.slow_wave_pub = self.create_publisher(Float32, 'slow_wave', 10)
 		self.fast_wave_pub = self.create_publisher(Float32, 'fast_wave', 10)
 		
+		#setting up a timer
 		timer_period = 0.01
 		self.timer = self.create_timer(timer_period, self.timer_callback)
 		
@@ -29,13 +31,17 @@ class oscope(Node):
 
 	# This callback will be called every time the timer fires.
 	def timer_callback(self):
+
+		#creating an elapsed time
 		current_time = self.get_clock().now().nanoseconds / 1e9
 		delta_t = current_time - self.start_time
 		
+		#message for values
 		msg_oscope = Float32()
 		msg_slow = Float32()
 		msg_fast = Float32()
 		
+		#creating the sine waves
 		msg_oscope.data = math.sin(2 * math.pi * 1 * delta_t)
 		msg_slow.data = math.sin(2 * math.pi * 0.5 * delta_t)
 		msg_fast.data = math.sin(2 * math.pi * 2 * delta_t)
