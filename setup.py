@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'hw1'
+package_name = 'hw2'
 
 setup(
     name=package_name,
@@ -20,8 +20,14 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'oscope = hw2.oscope:main',
-        'limiter = hw2.limiter:main',
+        # Publisher entry points
+        'oscope_osc = hw2.oscope:main_osc',
+        'oscope_slow = hw2.oscope:main_slow',
+        'oscope_fast = hw2.oscope:main_fast',
+        # Limiter entry points
+        'limiter_osc = hw2.limiter:main_osc',
+        'limiter_slow = hw2.limiter:main_slow',
+        'limiter_fast = hw2.limiter:main_fast',
         ],
     },
 )
